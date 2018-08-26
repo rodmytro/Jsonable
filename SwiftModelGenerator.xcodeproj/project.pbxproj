@@ -27,6 +27,10 @@
 		4930C43E213331DC00709D40 /* Data+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C43D213331DC00709D40 /* Data+Dictionary.swift */; };
 		4930C4402133327E00709D40 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C43F2133327E00709D40 /* MainPresenter.swift */; };
 		4930C4422133329D00709D40 /* MainMvpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4412133329D00709D40 /* MainMvpView.swift */; };
+		4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4432133370A00709D40 /* NSView+Decorator.swift */; };
+		4930C4472133373500709D40 /* NSWindow+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4462133373500709D40 /* NSWindow+Style.swift */; };
+		4930C4492133383C00709D40 /* NSTextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4482133383C00709D40 /* NSTextView+Style.swift */; };
+		4930C44B2133388500709D40 /* NSView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44A2133388500709D40 /* NSView+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		4930C43D213331DC00709D40 /* Data+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Dictionary.swift"; sourceTree = "<group>"; };
 		4930C43F2133327E00709D40 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		4930C4412133329D00709D40 /* MainMvpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMvpView.swift; sourceTree = "<group>"; };
+		4930C4432133370A00709D40 /* NSView+Decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Decorator.swift"; sourceTree = "<group>"; };
+		4930C4462133373500709D40 /* NSWindow+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Style.swift"; sourceTree = "<group>"; };
+		4930C4482133383C00709D40 /* NSTextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextView+Style.swift"; sourceTree = "<group>"; };
+		4930C44A2133388500709D40 /* NSView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,7 @@
 		4930C42121300FA700709D40 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				4930C4452133371800709D40 /* style */,
 				4930C42C2130112A00709D40 /* animation */,
 				4930C41921300F2E00709D40 /* router */,
 				4930C42221300FC600709D40 /* BaseVC.swift */,
@@ -226,6 +235,17 @@
 				4930C43D213331DC00709D40 /* Data+Dictionary.swift */,
 			);
 			path = utils;
+			sourceTree = "<group>";
+		};
+		4930C4452133371800709D40 /* style */ = {
+			isa = PBXGroup;
+			children = (
+				4930C4432133370A00709D40 /* NSView+Decorator.swift */,
+				4930C4462133373500709D40 /* NSWindow+Style.swift */,
+				4930C4482133383C00709D40 /* NSTextView+Style.swift */,
+				4930C44A2133388500709D40 /* NSView+Style.swift */,
+			);
+			path = style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,13 +354,17 @@
 				4930C435213016E400709D40 /* IndentableOutput.swift in Sources */,
 				4930C4392131CCA700709D40 /* VariableType.swift in Sources */,
 				4930C437213022A100709D40 /* SwiftyJSON.swift in Sources */,
+				4930C4492133383C00709D40 /* NSTextView+Style.swift in Sources */,
 				4930C41E21300F6400709D40 /* ViewRouter.swift in Sources */,
+				4930C4472133373500709D40 /* NSWindow+Style.swift in Sources */,
 				4930C43B2132CF6400709D40 /* ModelGenerator.swift in Sources */,
 				4930C43E213331DC00709D40 /* Data+Dictionary.swift in Sources */,
 				4930C42521300FE300709D40 /* BasePresenter.swift in Sources */,
 				4930C3FA21300CAD00709D40 /* AppDelegate.swift in Sources */,
 				4930C4402133327E00709D40 /* MainPresenter.swift in Sources */,
+				4930C44B2133388500709D40 /* NSView+Style.swift in Sources */,
 				4930C42021300F8000709D40 /* ViewTransitionAnimation.swift in Sources */,
+				4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */,
 				4930C41B21300F3A00709D40 /* BaseRouter.swift in Sources */,
 				4930C42321300FC600709D40 /* BaseVC.swift in Sources */,
 				4930C42A2130103400709D40 /* MainVC.swift in Sources */,

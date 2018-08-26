@@ -6,6 +6,8 @@
 //  Copyright © 2018 rodmytro. All rights reserved.
 //
 
+import Foundation
+
 protocol MainMvpView {
     func showModel(from: NSAttributedString)
 }

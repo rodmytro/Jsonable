@@ -16,7 +16,7 @@ class ModelGenerator {
     private var modelOutput: IndentableOutput = IndentableOutput()
     private var decodableOutput: IndentableOutput = IndentableOutput()
     
-    var childModels: [ModelGenerator] = []
+    private var childModels: [ModelGenerator] = []
     
     var output: String {
         get {
@@ -38,10 +38,10 @@ class ModelGenerator {
         //  set up
         (decodableOutput += "extension \(className): Decodable {").indent()
         (decodableOutput += "init(from decoder: Decoder) throws {").indent()
-        (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self)").indent()
+        (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self) \n")
         
         // building
-        iterate(json: json) { key, value in
+        iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
             self.buildDecodeStatement(io: self.decodableOutput, key: key, type: type)
         }
@@ -55,7 +55,7 @@ class ModelGenerator {
         (codingOutput += "private enum CodingKeys: String, CodingKey {").indent()
         
         // building
-        iterate(json: json) { key, _ in
+        iterate(by: json) { key, _ in
             self.buildCodingKeyStatement(io: self.codingOutput, key: key)
         }
         
@@ -68,7 +68,7 @@ class ModelGenerator {
         (modelOutput += "struct \(className) {").indent()
         
         // model building
-        iterate(json: json) { key, value in
+        iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
             self.modelOutput += "let \(key): \(type)"
         }
@@ -77,7 +77,7 @@ class ModelGenerator {
         (modelOutput.dedent() += "}")
     }
     
-    func iterate(json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
+    func iterate(by json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
         if let object = json.dictionary {
             for (key, value) in object {
                 closure(key, value)

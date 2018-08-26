@@ -6,7 +6,7 @@
 //  Copyright © 2018 rodmytro. All rights reserved.
 //
 
-import Cocoa
+import AppKit
 
 class MainVC: BaseVC {
 
