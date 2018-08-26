@@ -29,8 +29,11 @@
 		4930C4422133329D00709D40 /* MainMvpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4412133329D00709D40 /* MainMvpView.swift */; };
 		4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4432133370A00709D40 /* NSView+Decorator.swift */; };
 		4930C4472133373500709D40 /* NSWindow+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4462133373500709D40 /* NSWindow+Style.swift */; };
-		4930C4492133383C00709D40 /* NSTextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4482133383C00709D40 /* NSTextView+Style.swift */; };
+		4930C4492133383C00709D40 /* NSTextFIeld+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4482133383C00709D40 /* NSTextFIeld+Style.swift */; };
 		4930C44B2133388500709D40 /* NSView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44A2133388500709D40 /* NSView+Style.swift */; };
+		4930C44D21333B1900709D40 /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44C21333B1900709D40 /* NSColor+Hex.swift */; };
+		4930C44F21333C9300709D40 /* NSTextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44E21333C9300709D40 /* NSTextView+Style.swift */; };
+		4930C4512133431200709D40 /* NSAttributedString+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4502133431200709D40 /* NSAttributedString+Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +74,11 @@
 		4930C4412133329D00709D40 /* MainMvpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMvpView.swift; sourceTree = "<group>"; };
 		4930C4432133370A00709D40 /* NSView+Decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Decorator.swift"; sourceTree = "<group>"; };
 		4930C4462133373500709D40 /* NSWindow+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSWindow+Style.swift"; sourceTree = "<group>"; };
-		4930C4482133383C00709D40 /* NSTextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextView+Style.swift"; sourceTree = "<group>"; };
+		4930C4482133383C00709D40 /* NSTextFIeld+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextFIeld+Style.swift"; sourceTree = "<group>"; };
 		4930C44A2133388500709D40 /* NSView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Style.swift"; sourceTree = "<group>"; };
+		4930C44C21333B1900709D40 /* NSColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
+		4930C44E21333C9300709D40 /* NSTextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextView+Style.swift"; sourceTree = "<group>"; };
+		4930C4502133431200709D40 /* NSAttributedString+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Style.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,8 +248,11 @@
 			children = (
 				4930C4432133370A00709D40 /* NSView+Decorator.swift */,
 				4930C4462133373500709D40 /* NSWindow+Style.swift */,
-				4930C4482133383C00709D40 /* NSTextView+Style.swift */,
 				4930C44A2133388500709D40 /* NSView+Style.swift */,
+				4930C4482133383C00709D40 /* NSTextFIeld+Style.swift */,
+				4930C44E21333C9300709D40 /* NSTextView+Style.swift */,
+				4930C44C21333B1900709D40 /* NSColor+Hex.swift */,
+				4930C4502133431200709D40 /* NSAttributedString+Style.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -349,12 +358,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4930C44F21333C9300709D40 /* NSTextView+Style.swift in Sources */,
 				4930C42E2130115700709D40 /* NSView+Animation.swift in Sources */,
+				4930C44D21333B1900709D40 /* NSColor+Hex.swift in Sources */,
 				4930C4302130125F00709D40 /* MainWindow.swift in Sources */,
 				4930C435213016E400709D40 /* IndentableOutput.swift in Sources */,
 				4930C4392131CCA700709D40 /* VariableType.swift in Sources */,
 				4930C437213022A100709D40 /* SwiftyJSON.swift in Sources */,
-				4930C4492133383C00709D40 /* NSTextView+Style.swift in Sources */,
+				4930C4492133383C00709D40 /* NSTextFIeld+Style.swift in Sources */,
 				4930C41E21300F6400709D40 /* ViewRouter.swift in Sources */,
 				4930C4472133373500709D40 /* NSWindow+Style.swift in Sources */,
 				4930C43B2132CF6400709D40 /* ModelGenerator.swift in Sources */,
@@ -364,6 +375,7 @@
 				4930C4402133327E00709D40 /* MainPresenter.swift in Sources */,
 				4930C44B2133388500709D40 /* NSView+Style.swift in Sources */,
 				4930C42021300F8000709D40 /* ViewTransitionAnimation.swift in Sources */,
+				4930C4512133431200709D40 /* NSAttributedString+Style.swift in Sources */,
 				4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */,
 				4930C41B21300F3A00709D40 /* BaseRouter.swift in Sources */,
 				4930C42321300FC600709D40 /* BaseVC.swift in Sources */,

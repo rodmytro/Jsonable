@@ -9,6 +9,8 @@
 import Foundation
 import AppKit
 
+extension NSWindow: DecoratorCompatible {}
+
 struct WindowStyle {
     
     static var bgrWhite: Decoration<NSWindow> {

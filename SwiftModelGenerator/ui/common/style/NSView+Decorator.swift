@@ -39,11 +39,3 @@ extension DecoratorCompatible {
     }
 }
 
-extension NSView: DecoratorCompatible {}
-
-extension NSWindow: DecoratorCompatible {}
-
-
-
-extension NSMutableAttributedString: DecoratorCompatible {}
-

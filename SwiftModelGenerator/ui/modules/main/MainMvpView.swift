@@ -9,5 +9,5 @@
 import Foundation
 
 protocol MainMvpView {
-    func showModel(from: NSAttributedString)
+    func showModel(from: NSMutableAttributedString)
 }

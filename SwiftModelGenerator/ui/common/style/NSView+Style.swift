@@ -9,6 +9,9 @@
 import Foundation
 import AppKit
 
+extension NSView: DecoratorCompatible {}
+
+//MARK: Shape
 struct Style {
     
     static var cornersSmall: Decoration<NSView> {
@@ -35,4 +38,24 @@ struct Style {
             view.layer?.borderWidth = 1.3
         }
     }
+}
+
+// Background
+extension Style {
+    
+    static var appearanceDark: Decoration<NSView> {
+        return {
+            (view: NSView) -> Void in
+            view.appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
+        }
+    }
+    
+    static var bgrBlack: Decoration<NSView> {
+        return {
+            (view: NSView) -> Void in
+            view.wantsLayer = true
+            view.layer?.backgroundColor = NSColor.black.cgColor
+        }
+    }
+    
 }

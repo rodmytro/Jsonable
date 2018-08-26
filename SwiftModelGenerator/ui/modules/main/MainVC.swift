@@ -19,6 +19,13 @@ class MainVC: BaseVC {
         super.viewDidLoad()
         
         presenter = MainPresenter(view: self)
+        
+        style()
+    }
+    
+    func style() {
+        jsonTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
+        modelTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
     }
     
     @IBAction func onConvertClick(_ sender: Any) {
@@ -29,7 +36,9 @@ class MainVC: BaseVC {
 
 extension MainVC: MainMvpView {
     
-    func showModel(from attrString: NSAttributedString) {
+    func showModel(from attrString: NSMutableAttributedString) {
+        attrString <- [AttrTextStyle.colorWhite]
+        
         modelTextView.textStorage!.setAttributedString(attrString)
     }
     
