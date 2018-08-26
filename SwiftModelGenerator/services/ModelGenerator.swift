@@ -28,7 +28,7 @@ class ModelGenerator {
         }
     }
     
-    init(json: JSON, className: String, inspectArrays: Bool) {
+    init(json: JSON, className: String) {
         buildDecodable(json: json, className: className)
         buildModel(json: json, className: className)
         buildCodingKeys(json: json, className: className)

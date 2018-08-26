@@ -13,45 +13,24 @@ class MainVC: BaseVC {
     @IBOutlet var jsonTextView: NSTextView!
     @IBOutlet var modelTextView: NSTextView!
     
+    var presenter: MainPresenter!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        presenter = MainPresenter(view: self)
     }
     
     @IBAction func onConvertClick(_ sender: Any) {
-        generateModel()
+        presenter.generateModel(from: jsonTextView.textStorage!.string)
     }
     
-    func generateModel() {
-        let className = "MyClass" //classNameTextField.stringValue.isEmpty ? "MyClass":classNameTextField.stringValue;
-        
-        let jsonText = jsonTextView.textStorage!.string
-        let jsonData = jsonText.data(using: .utf8)
-        
-        
-        if let jsonData = jsonData {
-            if let dir = convertToDictionary(data: jsonData) {
-                
-                let json = JSON(dir)
-                
-                let generator = ModelGenerator(json: json, className: className, inspectArrays: true)
-                
-                modelTextView.textStorage!.setAttributedString(NSAttributedString(string: generator.output))
-            }
-            
-        } else {
-            modelTextView.textStorage!.setAttributedString(NSAttributedString(string: "Couldn't encode your data..."))
-        }
-    }
+}
+
+extension MainVC: MainMvpView {
     
-    func convertToDictionary(data: Data) -> [String: AnyObject]? {
-        do {
-            return try JSONSerialization.jsonObject(with: data, options: []) as? [String : AnyObject]
-        } catch let error as NSError {
-            print("Failed to load: \(error.localizedDescription)")
-        }
-        
-        return nil
+    func showModel(from attrString: NSAttributedString) {
+        modelTextView.textStorage!.setAttributedString(attrString)
     }
     
 }
