@@ -28,7 +28,7 @@ class ModelGenerator {
         }
     }
     
-    init(json: JSON, className: String) {
+    init(from json: JSON, andName className: String) {
         buildDecodable(json: json, className: className)
         buildModel(json: json, className: className)
         buildCodingKeys(json: json, className: className)
@@ -36,9 +36,9 @@ class ModelGenerator {
     
     func buildDecodable(json: JSON, className: String) {
         //  set up
-        (decodableOutput += "extension \(className): Decodable {").indent()
-        (decodableOutput += "init(from decoder: Decoder) throws {").indent()
-        (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self) \n")
+        _ = (decodableOutput += "extension \(className): Decodable {").indent()
+        _ = (decodableOutput += "init(from decoder: Decoder) throws {").indent()
+        _ = (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self) \n")
         
         // building
         iterate(by: json) { key, value in
@@ -47,12 +47,12 @@ class ModelGenerator {
         }
         
         // close everything up
-        (decodableOutput.dedent() += "}").dedent() += "}"
+        _ = (decodableOutput.dedent() += "}").dedent() += "}"
     }
     
     func buildCodingKeys(json: JSON, className: String) {
         //  set up
-        (codingOutput += "private enum CodingKeys: String, CodingKey {").indent()
+        _ = (codingOutput += "private enum CodingKeys: String, CodingKey {").indent()
         
         // building
         iterate(by: json) { key, _ in
@@ -60,21 +60,21 @@ class ModelGenerator {
         }
         
         // close everything up
-        (codingOutput.dedent() += "}")
+        _ = (codingOutput.dedent() += "}")
     }
     
     func buildModel(json: JSON, className: String) {
         //  set up
-        (modelOutput += "struct \(className) {").indent()
+        _ = (modelOutput += "struct \(className) {").indent()
         
         // model building
         iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
-            self.modelOutput += "let \(key): \(type)"
+            _ = self.modelOutput += "let \(key): \(type)"
         }
         
         // close everything up
-        (modelOutput.dedent() += "}")
+        _ = (modelOutput.dedent() += "}")
     }
     
     func iterate(by json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
@@ -86,11 +86,11 @@ class ModelGenerator {
     }
     
     func buildCodingKeyStatement(io: IndentableOutput, key: String) {
-        (io += "case \(key) = \"\(key)\"")
+        _ = (io += "case \(key) = \"\(key)\"")
     }
     
     func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
-        (io += "self.\(key) = \(type)(try container.decode(\(type).self, forKey: .\(key)))")
+        _ = (io += "self.\(key) = (try container.decode(\(type).self, forKey: .\(key))")
     }
     
     func buildClassName(className: String, suffix: String) -> String {

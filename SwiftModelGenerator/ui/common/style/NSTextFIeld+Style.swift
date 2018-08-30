@@ -37,13 +37,6 @@ struct TextStyle {
         }
     }
     
-    static var caretGrey: Decoration<NSTextField> {
-        return {
-            (view: NSTextField) -> Void in
-            //            view
-        }
-    }
-    
     static var focusNone: Decoration<NSTextField> {
         return {
             (view: NSTextField) -> Void in

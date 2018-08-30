@@ -8,15 +8,13 @@
 
 import Foundation
 
-enum VariableType {
-    case String
-    case Bool
-    case Double
-    case Int
-    case OtherObject(String) 
-    case AnyObject
-    case AnyArray
-    case OtherArray(String) 
+enum VariableType: String {
+    case String = "String"
+    case Bool = "Bool"
+    case Double = "Double"
+    case Int = "Int"
+    case AnyObject = "Any?"
+    case AnyArray = "[Any?]"
 }
 
 extension VariableType {
@@ -30,7 +28,7 @@ extension VariableType {
         } else if js.double != nil {
             self = .Double
         } else if let _ = js.array {
-            self = .OtherArray("SomeObject")
+            self = .AnyArray
         } else {
             self = .AnyObject
         }

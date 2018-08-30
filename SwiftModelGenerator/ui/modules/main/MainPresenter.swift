@@ -15,14 +15,15 @@ class MainPresenter: BasePresenter<MainMvpView> {
         
         guard let jsonData = jsonText.data(using: .utf8),
             let dir = jsonData.dictionary else {
-            view.showModel(from: NSMutableAttributedString(string: "Couldn't encode your data..."))
+            view.showModel(text: NSMutableAttributedString(string: "Couldn't encode your data..."))
             return
         }
         
         let json = JSON(dir)
-        let generator = ModelGenerator(json: json, className: className)
+        let generator = ModelGenerator(from: json, andName: className)
+        let attrString = NSMutableAttributedString(string: generator.output)
         
-        view.showModel(from: NSMutableAttributedString(string: generator.output))
+        view.showModel(text: attrString)
     }
     
 }

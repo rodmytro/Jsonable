@@ -24,6 +24,7 @@ class MainVC: BaseVC {
     }
     
     func style() {
+        view <- [Style.bgrBlack]
         jsonTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
         modelTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
     }
@@ -36,7 +37,7 @@ class MainVC: BaseVC {
 
 extension MainVC: MainMvpView {
     
-    func showModel(from attrString: NSMutableAttributedString) {
+    func showModel(text attrString: NSMutableAttributedString) {
         attrString <- [AttrTextStyle.colorWhite]
         
         modelTextView.textStorage!.setAttributedString(attrString)
