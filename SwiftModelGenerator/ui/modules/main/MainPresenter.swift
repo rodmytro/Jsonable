@@ -11,18 +11,10 @@ import Foundation
 class MainPresenter: BasePresenter<MainMvpView> {
     
     func generateModel(from jsonText: String) {
-        let className = "MyClass" //classNameTextField.stringValue.isEmpty ? "MyClass":classNameTextField.stringValue;
+        guard let modelCode = ModelService(from: jsonText, andName: "MyClass").generate() else { return }
         
-        guard let jsonData = jsonText.data(using: .utf8),
-            let dir = jsonData.dictionary else {
-            view.showModel(text: NSMutableAttributedString(string: "Couldn't encode your data..."))
-            return
-        }
-        
-        let json = JSON(dir)
-        let generator = ModelGenerator(from: json, andName: className)
-        
-        let attrString = SwiftSyntaxHighlighter(code: generator.output).highlighted
+        let attrString = SwiftSyntaxHighlighter(code: modelCode).highlighted
+        attrString <- [AttrTextStyle.courier12]
         
         view.showModel(text: attrString)
     }

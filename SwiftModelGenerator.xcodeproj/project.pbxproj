@@ -43,6 +43,20 @@
 		49F0AAD921394D0B00633D9C /* NSAttributedString+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAD821394D0B00633D9C /* NSAttributedString+Range.swift */; };
 		49F0AADB21394EA600633D9C /* String+Ranges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AADA21394EA600633D9C /* String+Ranges.swift */; };
 		49F0AADD21395AEF00633D9C /* SyntaxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AADC21395AEF00633D9C /* SyntaxColor.swift */; };
+		49F0AAE52139684600633D9C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F0AAE42139684600633D9C /* Cocoa.framework */; };
+		49F0AAE82139684600633D9C /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAE72139684600633D9C /* SourceEditorExtension.swift */; };
+		49F0AAEA2139684600633D9C /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAE92139684600633D9C /* SourceEditorCommand.swift */; };
+		49F0AAEF2139684600633D9C /* SwiftModel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49F0AAE22139684600633D9C /* SwiftModel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49F0AAF521396F2400633D9C /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAF421396F2400633D9C /* ModelService.swift */; };
+		49F0AAF6213972C400633D9C /* IndentableOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C434213016E400709D40 /* IndentableOutput.swift */; };
+		49F0AAF7213972C400633D9C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C436213022A100709D40 /* SwiftyJSON.swift */; };
+		49F0AAF8213972C400633D9C /* ModelGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C43A2132CF6400709D40 /* ModelGenerator.swift */; };
+		49F0AAF9213972C400633D9C /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAF421396F2400633D9C /* ModelService.swift */; };
+		49F0AAFA213972D200633D9C /* VariableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4382131CCA700709D40 /* VariableType.swift */; };
+		49F0AAFB2139734500633D9C /* Data+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C43D213331DC00709D40 /* Data+Dictionary.swift */; };
+		49F0AAFC2139734500633D9C /* String+CamelCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAD12139440C00633D9C /* String+CamelCase.swift */; };
+		49F0AAFE2139778A00633D9C /* NSMutableArray+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAFD2139778A00633D9C /* NSMutableArray+String.swift */; };
+		49F0AB0021397B6800633D9C /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAFF21397B6800633D9C /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +67,28 @@
 			remoteGlobalIDString = 4930C3F521300CAD00709D40;
 			remoteInfo = SwiftModelGenerator;
 		};
+		49F0AAED2139684600633D9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4930C3EE21300CAD00709D40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49F0AAE12139684600633D9C;
+			remoteInfo = SwiftModel;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49F0AAF32139684600633D9C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49F0AAEF2139684600633D9C /* SwiftModel.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4930C3F621300CAD00709D40 /* SwiftModelGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftModelGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +132,15 @@
 		49F0AAD821394D0B00633D9C /* NSAttributedString+Range.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Range.swift"; sourceTree = "<group>"; };
 		49F0AADA21394EA600633D9C /* String+Ranges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ranges.swift"; sourceTree = "<group>"; };
 		49F0AADC21395AEF00633D9C /* SyntaxColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxColor.swift; sourceTree = "<group>"; };
+		49F0AAE22139684600633D9C /* SwiftModel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftModel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F0AAE42139684600633D9C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		49F0AAE72139684600633D9C /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		49F0AAE92139684600633D9C /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		49F0AAEB2139684600633D9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F0AAEC2139684600633D9C /* SwiftModel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftModel.entitlements; sourceTree = "<group>"; };
+		49F0AAF421396F2400633D9C /* ModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
+		49F0AAFD2139778A00633D9C /* NSMutableArray+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableArray+String.swift"; sourceTree = "<group>"; };
+		49F0AAFF21397B6800633D9C /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +158,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49F0AADF2139684600633D9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F0AAE52139684600633D9C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,6 +174,8 @@
 			children = (
 				4930C3F821300CAD00709D40 /* SwiftModelGenerator */,
 				4930C40921300CAF00709D40 /* SwiftModelGeneratorTests */,
+				49F0AAE62139684600633D9C /* SwiftModel */,
+				49F0AAE32139684600633D9C /* Frameworks */,
 				4930C3F721300CAD00709D40 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,6 +185,7 @@
 			children = (
 				4930C3F621300CAD00709D40 /* SwiftModelGenerator.app */,
 				4930C40621300CAF00709D40 /* SwiftModelGeneratorTests.xctest */,
+				49F0AAE22139684600633D9C /* SwiftModel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,6 +305,7 @@
 				4930C434213016E400709D40 /* IndentableOutput.swift */,
 				4930C436213022A100709D40 /* SwiftyJSON.swift */,
 				4930C43A2132CF6400709D40 /* ModelGenerator.swift */,
+				49F0AAF421396F2400633D9C /* ModelService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -292,6 +348,27 @@
 			path = syntaxHighlighter;
 			sourceTree = "<group>";
 		};
+		49F0AAE32139684600633D9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49F0AAE42139684600633D9C /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49F0AAE62139684600633D9C /* SwiftModel */ = {
+			isa = PBXGroup;
+			children = (
+				49F0AAFF21397B6800633D9C /* CustomError.swift */,
+				49F0AAE72139684600633D9C /* SourceEditorExtension.swift */,
+				49F0AAE92139684600633D9C /* SourceEditorCommand.swift */,
+				49F0AAFD2139778A00633D9C /* NSMutableArray+String.swift */,
+				49F0AAEB2139684600633D9C /* Info.plist */,
+				49F0AAEC2139684600633D9C /* SwiftModel.entitlements */,
+			);
+			path = SwiftModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -302,10 +379,12 @@
 				4930C3F221300CAD00709D40 /* Sources */,
 				4930C3F321300CAD00709D40 /* Frameworks */,
 				4930C3F421300CAD00709D40 /* Resources */,
+				49F0AAF32139684600633D9C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49F0AAEE2139684600633D9C /* PBXTargetDependency */,
 			);
 			name = SwiftModelGenerator;
 			productName = SwiftModelGenerator;
@@ -330,6 +409,23 @@
 			productReference = 4930C40621300CAF00709D40 /* SwiftModelGeneratorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		49F0AAE12139684600633D9C /* SwiftModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F0AAF22139684600633D9C /* Build configuration list for PBXNativeTarget "SwiftModel" */;
+			buildPhases = (
+				49F0AADE2139684600633D9C /* Sources */,
+				49F0AADF2139684600633D9C /* Frameworks */,
+				49F0AAE02139684600633D9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftModel;
+			productName = SwiftModel;
+			productReference = 49F0AAE22139684600633D9C /* SwiftModel.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -346,6 +442,9 @@
 					4930C40521300CAF00709D40 = {
 						CreatedOnToolsVersion = 9.4.1;
 						TestTargetID = 4930C3F521300CAD00709D40;
+					};
+					49F0AAE12139684600633D9C = {
+						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
@@ -364,6 +463,7 @@
 			targets = (
 				4930C3F521300CAD00709D40 /* SwiftModelGenerator */,
 				4930C40521300CAF00709D40 /* SwiftModelGeneratorTests */,
+				49F0AAE12139684600633D9C /* SwiftModel */,
 			);
 		};
 /* End PBXProject section */
@@ -380,6 +480,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4930C40421300CAF00709D40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49F0AAE02139684600633D9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -421,6 +528,7 @@
 				49F0AACA2138473000633D9C /* String+Index.swift in Sources */,
 				4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */,
 				4930C41B21300F3A00709D40 /* BaseRouter.swift in Sources */,
+				49F0AAF521396F2400633D9C /* ModelService.swift in Sources */,
 				4930C42321300FC600709D40 /* BaseVC.swift in Sources */,
 				4930C42A2130103400709D40 /* MainVC.swift in Sources */,
 				4930C4422133329D00709D40 /* MainMvpView.swift in Sources */,
@@ -436,6 +544,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49F0AADE2139684600633D9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F0AAFE2139778A00633D9C /* NSMutableArray+String.swift in Sources */,
+				49F0AAFB2139734500633D9C /* Data+Dictionary.swift in Sources */,
+				49F0AAFC2139734500633D9C /* String+CamelCase.swift in Sources */,
+				49F0AAFA213972D200633D9C /* VariableType.swift in Sources */,
+				49F0AB0021397B6800633D9C /* CustomError.swift in Sources */,
+				49F0AAF6213972C400633D9C /* IndentableOutput.swift in Sources */,
+				49F0AAF7213972C400633D9C /* SwiftyJSON.swift in Sources */,
+				49F0AAF8213972C400633D9C /* ModelGenerator.swift in Sources */,
+				49F0AAF9213972C400633D9C /* ModelService.swift in Sources */,
+				49F0AAE82139684600633D9C /* SourceEditorExtension.swift in Sources */,
+				49F0AAEA2139684600633D9C /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -443,6 +569,11 @@
 			isa = PBXTargetDependency;
 			target = 4930C3F521300CAD00709D40 /* SwiftModelGenerator */;
 			targetProxy = 4930C40721300CAF00709D40 /* PBXContainerItemProxy */;
+		};
+		49F0AAEE2139684600633D9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49F0AAE12139684600633D9C /* SwiftModel */;
+			targetProxy = 49F0AAED2139684600633D9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -574,6 +705,7 @@
 		4930C41021300CAF00709D40 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftModelGenerator/app/SwiftModelGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -593,6 +725,7 @@
 		4930C41121300CAF00709D40 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SwiftModelGenerator/app/SwiftModelGenerator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -651,6 +784,46 @@
 			};
 			name = Release;
 		};
+		49F0AAF02139684600633D9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftModel/SwiftModel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XP965TLDBX;
+				INFOPLIST_FILE = SwiftModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rodmytro.SwiftModelGenerator.SwiftModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		49F0AAF12139684600633D9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SwiftModel/SwiftModel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = XP965TLDBX;
+				INFOPLIST_FILE = SwiftModel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rodmytro.SwiftModelGenerator.SwiftModel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -677,6 +850,15 @@
 			buildConfigurations = (
 				4930C41321300CAF00709D40 /* Debug */,
 				4930C41421300CAF00709D40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F0AAF22139684600633D9C /* Build configuration list for PBXNativeTarget "SwiftModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F0AAF02139684600633D9C /* Debug */,
+				49F0AAF12139684600633D9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,7 +9,7 @@
 import Foundation
 
 extension Data {
-    var dictionary: [String: AnyObject]? {
+    public var dictionary: [String: AnyObject]? {
         do {
             return try JSONSerialization.jsonObject(with: self, options: []) as? [String : AnyObject]
         } catch let error as NSError {

@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension String {
-    var camelCase: String {
+public extension String {
+    public var camelCase: String {
         var value = self
         
         while let indexOfUnderscore = value.index(of: "_") {

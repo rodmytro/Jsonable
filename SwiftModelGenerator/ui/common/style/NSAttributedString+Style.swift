@@ -13,17 +13,7 @@ extension NSAttributedString: DecoratorCompatible {}
 
 class AttrTextStyle {
     
-    //MARK: - STYLING -
-    
-    static var fontConnection: Decoration<NSMutableAttributedString> {
-        return font(NSFont(name: ".SFNSDisplay-Semibold", size: 10)!)
-    }
-    
-    static var colorWhite: Decoration<NSMutableAttributedString> {
-        return color(NSColor.white)
-    }
-    
-    //MARK: - GENERAL FUNCS -
+    //MARK: COLOR
     
     static func color(_ value: NSColor, atRange range: NSRange) -> Decoration<NSMutableAttributedString> {
         return {
@@ -42,6 +32,13 @@ class AttrTextStyle {
         }
     }
     
+    static var colorWhite: Decoration<NSMutableAttributedString> {
+        return color(NSColor.white)
+    }
+    
+    
+    // MARK: FONT
+    
     static func font(_ value: NSFont) -> Decoration<NSMutableAttributedString> {
         return {
             (attrString: NSMutableAttributedString) -> Void in
@@ -49,5 +46,9 @@ class AttrTextStyle {
             let allTextRange = NSMakeRange(0, attrString.length)
             attrString.addAttributes([NSAttributedStringKey.font: value], range: allTextRange)
         }
+    }
+    
+    static var courier12: Decoration<NSMutableAttributedString> {
+        return font(NSFont.init(name: "Courier New", size: 12)!)
     }
 }

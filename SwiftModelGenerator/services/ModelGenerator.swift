@@ -34,7 +34,7 @@ class ModelGenerator {
         buildCodingKeys(json: json, className: className)
     }
     
-    func buildDecodable(json: JSON, className: String) {
+    private func buildDecodable(json: JSON, className: String) {
         _ = (decodableOutput += "extension \(className): Decodable {").indent()
         _ = (decodableOutput += "init(from decoder: Decoder) throws {").indent()
         _ = (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self) \n")
@@ -47,7 +47,7 @@ class ModelGenerator {
         _ = (decodableOutput.dedent() += "}").dedent() += "}"
     }
     
-    func buildCodingKeys(json: JSON, className: String) {
+    private func buildCodingKeys(json: JSON, className: String) {
         _ = (codingOutput += "private enum CodingKeys: String, CodingKey {").indent()
         
         iterate(by: json) { key, _ in
@@ -57,7 +57,7 @@ class ModelGenerator {
         _ = (codingOutput.dedent() += "}")
     }
     
-    func buildModel(json: JSON, className: String) {
+    private func buildModel(json: JSON, className: String) {
         _ = (modelOutput += "struct \(className) {").indent()
         
         iterate(by: json) { key, value in
@@ -68,7 +68,7 @@ class ModelGenerator {
         _ = (modelOutput.dedent() += "}")
     }
     
-    func iterate(by json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
+    private func iterate(by json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
         if let object = json.dictionary {
             for (key, value) in object {
                 closure(key, value)
@@ -76,15 +76,15 @@ class ModelGenerator {
         }
     }
     
-    func buildCodingKeyStatement(io: IndentableOutput, key: String) {
+    private func buildCodingKeyStatement(io: IndentableOutput, key: String) {
         _ = (io += "case \(key.camelCase) = \"\(key)\"")
     }
     
-    func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
+    private func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
         _ = (io += "self.\(key.camelCase) = try container.decode(\(type).self, forKey: .\(key.camelCase))")
     }
     
-    func buildClassName(className: String, suffix: String) -> String {
+    private func buildClassName(className: String, suffix: String) -> String {
         return className
     }
     
