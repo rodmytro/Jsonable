@@ -48,7 +48,7 @@ class AttrTextStyle {
         }
     }
     
-    static var courier12: Decoration<NSMutableAttributedString> {
-        return font(NSFont.init(name: "Courier New", size: 12)!)
+    static var courier13: Decoration<NSMutableAttributedString> {
+        return font(NSFont.init(name: "Courier New", size: 13)!)
     }
 }

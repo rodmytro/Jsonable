@@ -11,10 +11,12 @@ import Foundation
 class MainPresenter: BasePresenter<MainMvpView> {
     
     func generateModel(from jsonText: String) {
-        guard let modelCode = ModelService(from: jsonText, andName: "MyClass").generate() else { return }
+        let className = "MyClass"
         
-        let attrString = SwiftSyntaxHighlighter(code: modelCode).highlighted
-        attrString <- [AttrTextStyle.courier12]
+        guard let modelCode = ModelService(from: jsonText, andName: className).generate() else { return }
+        
+        let attrString = SwiftSyntaxHighlighter(code: modelCode, className: className).highlighted
+        attrString <- [AttrTextStyle.courier13]
         
         view.showModel(text: attrString)
     }

@@ -38,9 +38,7 @@ class IndentableOutput {
         }
     }
     var tabs: String {
-        get {
-            return " "  * (indentation * spacesPerIndent)
-        }
+        return " "  * (indentation * spacesPerIndent)
     }
     
     var output: String = ""
@@ -100,8 +98,8 @@ func += (left:IndentableOutput, right:[IndentableOutput]) -> IndentableOutput {
 }
 
 func * (left: String, right: Int) -> String {
-    var output = left
-    for _ in 0...right {
+    var output = ""
+    for _ in 0..<right {
         output += left
     }
     return output

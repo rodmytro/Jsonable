@@ -12,6 +12,7 @@ import AppKit
 
 class ModelGenerator {
     
+    private let importOutput: String = "import Foundation \n"
     private var codingOutput: IndentableOutput = IndentableOutput()
     private var modelOutput: IndentableOutput = IndentableOutput()
     private var decodableOutput: IndentableOutput = IndentableOutput()
@@ -20,7 +21,9 @@ class ModelGenerator {
     
     var output: String {
         get {
-            return codingOutput.output +
+            return importOutput +
+                "\n" +
+                codingOutput.output +
                 "\n" +
                 modelOutput.output +
                 "\n" +

@@ -11,8 +11,9 @@ import AppKit
 
 class SwiftSyntaxHighlighter: SyntaxHighlighter {
     let output: NSMutableAttributedString
+    let className: String
     
-    let keywords: [String : SyntaxColor] =
+    var keywords: [String: SyntaxColor] =
         [ "Int": .type,
           "Double": .type,
           "String": .type,
@@ -32,16 +33,21 @@ class SwiftSyntaxHighlighter: SyntaxHighlighter {
           "enum": .modifier,
           "private": .modifier,
           "init": .statement,
+          ":": .statement,
+          "import": .statement,
           "throws": .statement,
           "try": .statement,
           "case": .statement ]
     
-    required init(code: String) {
+    required init(code: String, className: String) {
         self.output = NSMutableAttributedString(string: code)
+        self.className = className
     }
     
     var highlighted: NSMutableAttributedString {
-        output <- [AttrTextStyle.color(NSColor.white)]
+        output <- [AttrTextStyle.color(SyntaxColor.simple.color)]
+        
+        keywords[className] = .className
         
         for (keyword, syntax) in keywords {
             let ranges = output.nsRanges(of: keyword)

@@ -11,7 +11,7 @@ import AppKit
 extension NSColor {
     
     static var AppDarkGrey: NSColor {
-        return NSColor.initFrom(htmlColor: "#1D174E")
+        return NSColor.initFrom(htmlColor: "#28323F")
     }
     
     static var AppLightGreen: NSColor {
