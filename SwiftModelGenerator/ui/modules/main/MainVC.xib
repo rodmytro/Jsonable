@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="MainVC" customModule="SwiftModelGenerator" customModuleProvider="target">
             <connections>
+                <outlet property="convertButton" destination="XYd-DJ-Ly1" id="lsU-W9-mig"/>
                 <outlet property="jsonTextView" destination="fqd-zz-T60" id="ptD-ce-hDd"/>
                 <outlet property="modelTextView" destination="m6N-tk-0JI" id="7j9-sp-CZm"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -18,18 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="800" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1M-mY-PBi">
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1M-mY-PBi">
                     <rect key="frame" x="0.0" y="20" width="300" height="460"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                     <clipView key="contentView" ambiguous="YES" id="ON2-On-h5e">
-                        <rect key="frame" x="1" y="1" width="298" height="458"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="fqd-zz-T60">
-                                <rect key="frame" x="0.0" y="0.0" width="298" height="458"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="298" height="458"/>
+                                <size key="minSize" width="300" height="460"/>
                                 <size key="maxSize" width="491" height="10000000"/>
                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </textView>
@@ -41,22 +42,22 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yc9-aS-hm9">
-                        <rect key="frame" x="283" y="1" width="16" height="458"/>
+                        <rect key="frame" x="284" y="0.0" width="16" height="460"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-ik-Zum">
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf4-ik-Zum">
                     <rect key="frame" x="308" y="20" width="492" height="460"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
                     <clipView key="contentView" ambiguous="YES" id="l4f-R4-4Uv">
-                        <rect key="frame" x="1" y="1" width="490" height="458"/>
+                        <rect key="frame" x="0.0" y="0.0" width="492" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView ambiguous="YES" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="m6N-tk-0JI">
-                                <rect key="frame" x="0.0" y="0.0" width="490" height="458"/>
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="490" height="458"/>
+                                <size key="minSize" width="492" height="460"/>
                                 <size key="maxSize" width="498" height="10000000"/>
                                 <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </textView>
@@ -68,14 +69,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="FWN-Vq-qIB">
-                        <rect key="frame" x="475" y="1" width="16" height="458"/>
+                        <rect key="frame" x="476" y="0.0" width="16" height="460"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYd-DJ-Ly1">
-                    <rect key="frame" x="360" y="-7" width="81" height="32"/>
+                    <rect key="frame" x="356" y="-7" width="89" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQT-At-GiA">
+                    <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQT-At-GiA">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

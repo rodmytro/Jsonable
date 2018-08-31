@@ -27,7 +27,7 @@ class MainWindow: NSWindow {
     
     func applyStyle() {
         isMovableByWindowBackground = true
-        self <- [WindowStyle.appearanceDark]
+        self <- [WindowStyle.appearanceDark, WindowStyle.bgrDarkGrey, WindowStyle.titleBarTransparent]
     }
     
     

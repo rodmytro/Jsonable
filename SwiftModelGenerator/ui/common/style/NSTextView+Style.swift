@@ -12,10 +12,10 @@ import AppKit
 //MARK: - GLOBAL -
 extension TextStyle {
     
-    static var bgrBlack: Decoration<NSTextView> {
+    static var bgrDarkGrey: Decoration<NSTextView> {
         return {
             (view: NSTextView) -> Void in
-            view.backgroundColor = NSColor.black
+            view.backgroundColor = NSColor.AppDarkGrey
         }
     }
     

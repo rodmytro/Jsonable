@@ -20,10 +20,10 @@ struct WindowStyle {
         }
     }
     
-    static var bgrBlack: Decoration<NSWindow> {
+    static var bgrDarkGrey: Decoration<NSWindow> {
         return {
             (window: NSWindow) -> Void in
-            window.backgroundColor = NSColor.black
+            window.backgroundColor = NSColor.AppDarkGrey
         }
     }
     

@@ -70,7 +70,7 @@ class ModelGenerator {
         // model building
         iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
-            _ = self.modelOutput += "let \(key): \(type)"
+            _ = self.modelOutput += "let \(key.swiftableKey): \(type)"
         }
         
         // close everything up
@@ -86,11 +86,11 @@ class ModelGenerator {
     }
     
     func buildCodingKeyStatement(io: IndentableOutput, key: String) {
-        _ = (io += "case \(key) = \"\(key)\"")
+        _ = (io += "case \(key.swiftableKey) = \"\(key)\"")
     }
     
     func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
-        _ = (io += "self.\(key) = (try container.decode(\(type).self, forKey: .\(key))")
+        _ = (io += "self.\(key.swiftableKey) = try container.decode(\(type).self, forKey: .\(key.swiftableKey)")
     }
     
     func buildClassName(className: String, suffix: String) -> String {

@@ -33,6 +33,11 @@
 		4930C44B2133388500709D40 /* NSView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44A2133388500709D40 /* NSView+Style.swift */; };
 		4930C44F21333C9300709D40 /* NSTextView+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C44E21333C9300709D40 /* NSTextView+Style.swift */; };
 		4930C4512133431200709D40 /* NSAttributedString+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930C4502133431200709D40 /* NSAttributedString+Style.swift */; };
+		49F0AAC62138468600633D9C /* NSColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAC52138468600633D9C /* NSColor+App.swift */; };
+		49F0AAC8213846CA00633D9C /* NSColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAC7213846CA00633D9C /* NSColor+Hex.swift */; };
+		49F0AACA2138473000633D9C /* String+Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAC92138473000633D9C /* String+Index.swift */; };
+		49F0AACC21384A9600633D9C /* NSButton+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AACB21384A9600633D9C /* NSButton+Style.swift */; };
+		49F0AAD22139440C00633D9C /* String+SwiftableKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0AAD12139440C00633D9C /* String+SwiftableKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +82,11 @@
 		4930C44A2133388500709D40 /* NSView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Style.swift"; sourceTree = "<group>"; };
 		4930C44E21333C9300709D40 /* NSTextView+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextView+Style.swift"; sourceTree = "<group>"; };
 		4930C4502133431200709D40 /* NSAttributedString+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Style.swift"; sourceTree = "<group>"; };
+		49F0AAC52138468600633D9C /* NSColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+App.swift"; sourceTree = "<group>"; };
+		49F0AAC7213846CA00633D9C /* NSColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Hex.swift"; sourceTree = "<group>"; };
+		49F0AAC92138473000633D9C /* String+Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Index.swift"; sourceTree = "<group>"; };
+		49F0AACB21384A9600633D9C /* NSButton+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Style.swift"; sourceTree = "<group>"; };
+		49F0AAD12139440C00633D9C /* String+SwiftableKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SwiftableKey.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +239,7 @@
 				4930C434213016E400709D40 /* IndentableOutput.swift */,
 				4930C436213022A100709D40 /* SwiftyJSON.swift */,
 				4930C43A2132CF6400709D40 /* ModelGenerator.swift */,
+				49F0AAD12139440C00633D9C /* String+SwiftableKey.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4930C43D213331DC00709D40 /* Data+Dictionary.swift */,
+				49F0AAC92138473000633D9C /* String+Index.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -250,6 +262,9 @@
 				4930C4482133383C00709D40 /* NSTextFIeld+Style.swift */,
 				4930C44E21333C9300709D40 /* NSTextView+Style.swift */,
 				4930C4502133431200709D40 /* NSAttributedString+Style.swift */,
+				49F0AAC52138468600633D9C /* NSColor+App.swift */,
+				49F0AAC7213846CA00633D9C /* NSColor+Hex.swift */,
+				49F0AACB21384A9600633D9C /* NSButton+Style.swift */,
 			);
 			path = style;
 			sourceTree = "<group>";
@@ -358,6 +373,9 @@
 				4930C44F21333C9300709D40 /* NSTextView+Style.swift in Sources */,
 				4930C42E2130115700709D40 /* NSView+Animation.swift in Sources */,
 				4930C4302130125F00709D40 /* MainWindow.swift in Sources */,
+				49F0AAC62138468600633D9C /* NSColor+App.swift in Sources */,
+				49F0AACC21384A9600633D9C /* NSButton+Style.swift in Sources */,
+				49F0AAC8213846CA00633D9C /* NSColor+Hex.swift in Sources */,
 				4930C435213016E400709D40 /* IndentableOutput.swift in Sources */,
 				4930C4392131CCA700709D40 /* VariableType.swift in Sources */,
 				4930C437213022A100709D40 /* SwiftyJSON.swift in Sources */,
@@ -368,10 +386,12 @@
 				4930C43E213331DC00709D40 /* Data+Dictionary.swift in Sources */,
 				4930C42521300FE300709D40 /* BasePresenter.swift in Sources */,
 				4930C3FA21300CAD00709D40 /* AppDelegate.swift in Sources */,
+				49F0AAD22139440C00633D9C /* String+SwiftableKey.swift in Sources */,
 				4930C4402133327E00709D40 /* MainPresenter.swift in Sources */,
 				4930C44B2133388500709D40 /* NSView+Style.swift in Sources */,
 				4930C42021300F8000709D40 /* ViewTransitionAnimation.swift in Sources */,
 				4930C4512133431200709D40 /* NSAttributedString+Style.swift in Sources */,
+				49F0AACA2138473000633D9C /* String+Index.swift in Sources */,
 				4930C4442133370A00709D40 /* NSView+Decorator.swift in Sources */,
 				4930C41B21300F3A00709D40 /* BaseRouter.swift in Sources */,
 				4930C42321300FC600709D40 /* BaseVC.swift in Sources */,

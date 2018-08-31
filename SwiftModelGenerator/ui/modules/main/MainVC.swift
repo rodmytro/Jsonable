@@ -12,6 +12,7 @@ class MainVC: BaseVC {
 
     @IBOutlet var jsonTextView: NSTextView!
     @IBOutlet var modelTextView: NSTextView!
+    @IBOutlet weak var convertButton: NSButton!
     
     var presenter: MainPresenter!
     
@@ -24,9 +25,9 @@ class MainVC: BaseVC {
     }
     
     func style() {
-        view <- [Style.bgrBlack]
-        jsonTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
-        modelTextView <- [TextStyle.bgrBlack, TextStyle.textWhite]
+        jsonTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
+        modelTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
+        convertButton <- [Style.buttonGradient]
     }
     
     @IBAction func onConvertClick(_ sender: Any) {

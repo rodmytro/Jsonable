@@ -50,6 +50,13 @@ extension Style {
         }
     }
     
+    static var appearanceAqua: Decoration<NSView> {
+        return {
+            (view: NSView) -> Void in
+            view.appearance = NSAppearance(named: NSAppearance.Name.aqua)
+        }
+    }
+    
     static var bgrBlack: Decoration<NSView> {
         return {
             (view: NSView) -> Void in
@@ -59,3 +66,30 @@ extension Style {
     }
     
 }
+
+// MARK: GRADIENT
+extension Style {
+    
+    static func gradient(withColors colors: [NSColor]) -> Decoration<NSView> {
+        return {
+            (view: NSView) -> Void in
+            view.wantsLayer = true
+            
+            let gradient: CAGradientLayer = CAGradientLayer()
+            
+            gradient.frame = view.bounds
+            gradient.colors = colors.map { $0.cgColor }
+            gradient.startPoint = CGPoint(x: 0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+            
+            view.layer?.insertSublayer(gradient, at: 0)
+        }
+    }
+    
+    static var buttonGradient: Decoration<NSView> {
+        return gradient(withColors: [NSColor.AppLightAqua, NSColor.AppLightGreen])
+    }
+    
+}
+
+
