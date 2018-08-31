@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-    var swiftableKey: String {
+    var camelCase: String {
         var value = self
         
         while let indexOfUnderscore = value.index(of: "_") {

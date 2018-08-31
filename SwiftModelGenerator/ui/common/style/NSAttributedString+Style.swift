@@ -25,6 +25,14 @@ class AttrTextStyle {
     
     //MARK: - GENERAL FUNCS -
     
+    static func color(_ value: NSColor, atRange range: NSRange) -> Decoration<NSMutableAttributedString> {
+        return {
+            (attrString: NSMutableAttributedString) -> Void in
+            
+            attrString.addAttributes([NSAttributedStringKey.foregroundColor: value], range: range)
+        }
+    }
+    
     static func color(_ value: NSColor) -> Decoration<NSMutableAttributedString> {
         return {
             (attrString: NSMutableAttributedString) -> Void in

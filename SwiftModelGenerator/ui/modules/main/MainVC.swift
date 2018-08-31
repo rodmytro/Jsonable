@@ -39,8 +39,6 @@ class MainVC: BaseVC {
 extension MainVC: MainMvpView {
     
     func showModel(text attrString: NSMutableAttributedString) {
-        attrString <- [AttrTextStyle.colorWhite]
-        
         modelTextView.textStorage!.setAttributedString(attrString)
     }
     

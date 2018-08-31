@@ -35,45 +35,36 @@ class ModelGenerator {
     }
     
     func buildDecodable(json: JSON, className: String) {
-        //  set up
         _ = (decodableOutput += "extension \(className): Decodable {").indent()
         _ = (decodableOutput += "init(from decoder: Decoder) throws {").indent()
         _ = (decodableOutput += "let container = try decoder.container(keyedBy: CodingKeys.self) \n")
         
-        // building
         iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
             self.buildDecodeStatement(io: self.decodableOutput, key: key, type: type)
         }
         
-        // close everything up
         _ = (decodableOutput.dedent() += "}").dedent() += "}"
     }
     
     func buildCodingKeys(json: JSON, className: String) {
-        //  set up
         _ = (codingOutput += "private enum CodingKeys: String, CodingKey {").indent()
         
-        // building
         iterate(by: json) { key, _ in
             self.buildCodingKeyStatement(io: self.codingOutput, key: key)
         }
         
-        // close everything up
         _ = (codingOutput.dedent() += "}")
     }
     
     func buildModel(json: JSON, className: String) {
-        //  set up
         _ = (modelOutput += "struct \(className) {").indent()
         
-        // model building
         iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
-            _ = self.modelOutput += "let \(key.swiftableKey): \(type)"
+            _ = self.modelOutput += "let \(key.camelCase): \(type)"
         }
         
-        // close everything up
         _ = (modelOutput.dedent() += "}")
     }
     
@@ -86,11 +77,11 @@ class ModelGenerator {
     }
     
     func buildCodingKeyStatement(io: IndentableOutput, key: String) {
-        _ = (io += "case \(key.swiftableKey) = \"\(key)\"")
+        _ = (io += "case \(key.camelCase) = \"\(key)\"")
     }
     
     func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
-        _ = (io += "self.\(key.swiftableKey) = try container.decode(\(type).self, forKey: .\(key.swiftableKey)")
+        _ = (io += "self.\(key.camelCase) = try container.decode(\(type).self, forKey: .\(key.camelCase))")
     }
     
     func buildClassName(className: String, suffix: String) -> String {

@@ -21,7 +21,8 @@ class MainPresenter: BasePresenter<MainMvpView> {
         
         let json = JSON(dir)
         let generator = ModelGenerator(from: json, andName: className)
-        let attrString = NSMutableAttributedString(string: generator.output)
+        
+        let attrString = SwiftSyntaxHighlighter(code: generator.output).highlighted
         
         view.showModel(text: attrString)
     }
