@@ -10,4 +10,5 @@ import Foundation
 
 protocol MainMvpView {
     func showModel(text: NSMutableAttributedString)
+    func showJSON(text: NSMutableAttributedString)
 }

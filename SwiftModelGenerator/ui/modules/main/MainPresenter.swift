@@ -21,4 +21,12 @@ class MainPresenter: BasePresenter<MainMvpView> {
         view.showModel(text: attrString)
     }
     
+    func onPasted(json: String) {
+        let attrString = JSONSyntaxHighlighter(code: json, className: "").highlighted
+        
+        view.showJSON(text: attrString)
+        
+        generateModel(from: json)
+    }
+    
 }

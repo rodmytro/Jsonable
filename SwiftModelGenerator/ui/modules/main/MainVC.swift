@@ -10,9 +10,10 @@ import AppKit
 
 class MainVC: BaseVC {
 
-    @IBOutlet var jsonTextView: NSTextView!
+    @IBOutlet var jsonTextView: PastableTextView!
     @IBOutlet var modelTextView: NSTextView!
     @IBOutlet weak var convertButton: NSButton!
+    @IBOutlet weak var copyButton: NSButton!
     
     var presenter: MainPresenter!
     
@@ -22,6 +23,12 @@ class MainVC: BaseVC {
         presenter = MainPresenter(view: self)
         
         style()
+        
+        jsonTextView.pasteCallback = { [weak self] in 
+            guard let strongSelf = self else { return }
+            
+            strongSelf.presenter.onPasted(json: strongSelf.jsonTextView.textStorage!.string)
+        }
     }
     
     func style() {
@@ -34,6 +41,9 @@ class MainVC: BaseVC {
         presenter.generateModel(from: jsonTextView.textStorage!.string)
     }
     
+    @IBAction func onCopyClick(_ sender: Any) {
+        
+    }
 }
 
 extension MainVC: MainMvpView {
@@ -42,4 +52,7 @@ extension MainVC: MainMvpView {
         modelTextView.textStorage!.setAttributedString(attrString)
     }
     
+    func showJSON(text attrString: NSMutableAttributedString) {
+        jsonTextView.textStorage?.setAttributedString(attrString)
+    }
 }
