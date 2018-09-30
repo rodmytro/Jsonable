@@ -13,7 +13,7 @@ class BaseVC: NSViewController {
     
     var router: BaseRouter!
     
-    var keyHandler : Any?
+    var keyHandler: Any?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

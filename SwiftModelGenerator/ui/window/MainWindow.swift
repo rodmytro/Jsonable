@@ -16,18 +16,15 @@ class MainWindow: NSWindow {
     var router: BaseRouter!
     
     override func awakeFromNib() {
-        
         router = ViewRouter(container: containerView)
-        router.onControllerChangedListener = { destinationController in }
-        
         router.show(controller: .mainScreen) { controller in }
         
-        applyStyle()
+        setupStyle()
     }
     
-    func applyStyle() {
-        isMovableByWindowBackground = true
-        self <- [WindowStyle.appearanceDark, WindowStyle.bgrDarkGrey, WindowStyle.titleBarTransparent]
+    func setupStyle() {
+        self <- [WindowStyle.movableByBackground, WindowStyle.appearanceDark,
+                 WindowStyle.bgrDarkGrey, WindowStyle.titleBarTransparent]
     }
     
 }

@@ -22,19 +22,23 @@ class MainVC: BaseVC {
         
         presenter = MainPresenter(view: self)
         
-        style()
-        
-        jsonTextView.pasteCallback = { [weak self] in 
-            self?.presenter.onPasted(json: self?.jsonTextView.textStorage?.string)
-        }
+        setupStyle()
+        setupPasteActions()
     }
     
-    func style() {
+    private func setupStyle() {
         jsonTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
         modelTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
         convertButton <- [Style.buttonGradient]
     }
     
+    private func setupPasteActions() {
+        jsonTextView.pasteCallback = { [weak self] in
+            self?.presenter.onPasted(json: self?.jsonTextView.textStorage?.string)
+        }
+    }
+    
+    // MARK: actions
     @IBAction func onConvertClick(_ sender: Any) {
         presenter.onConvertClick(from: jsonTextView.textStorage!.string)
     }

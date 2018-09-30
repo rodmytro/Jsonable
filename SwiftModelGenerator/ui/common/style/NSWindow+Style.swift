@@ -11,21 +11,8 @@ import AppKit
 
 extension NSWindow: DecoratorCompatible {}
 
+// MARK: common
 struct WindowStyle {
-    
-    static var bgrWhite: Decoration<NSWindow> {
-        return {
-            (window: NSWindow) -> Void in
-            window.backgroundColor = NSColor.white
-        }
-    }
-    
-    static var bgrDarkGrey: Decoration<NSWindow> {
-        return {
-            (window: NSWindow) -> Void in
-            window.backgroundColor = NSColor.AppDarkGrey
-        }
-    }
     
     static var titleBarTransparent: Decoration<NSWindow> {
         return {
@@ -39,6 +26,31 @@ struct WindowStyle {
         return {
             (window: NSWindow) -> Void in
             window.appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
+        }
+    }
+    
+    static var movableByBackground: Decoration<NSWindow> {
+        return {
+            (window: NSWindow) -> Void in
+            window.isMovableByWindowBackground = true
+        }
+    }
+}
+
+// MARK: colors
+extension WindowStyle {
+    
+    static var bgrWhite: Decoration<NSWindow> {
+        return {
+            (window: NSWindow) -> Void in
+            window.backgroundColor = NSColor.white
+        }
+    }
+    
+    static var bgrDarkGrey: Decoration<NSWindow> {
+        return {
+            (window: NSWindow) -> Void in
+            window.backgroundColor = NSColor.AppDarkGrey
         }
     }
 }

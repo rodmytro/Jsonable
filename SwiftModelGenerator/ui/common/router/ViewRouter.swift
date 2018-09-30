@@ -11,7 +11,7 @@ import AppKit
 
 class ViewRouter: BaseRouter {
     
-    public var onControllerChangedListener: onControllerChangeAction?
+    var onControllerChangedListener: onControllerChangeAction?
     
     internal var currentController: BaseVC?
     
@@ -41,10 +41,10 @@ class ViewRouter: BaseRouter {
             onControllerChangedListener(controller)
         }
         
-        //remove old
+        //remove old VC
         container.subviews.removeAll()
         
-        //add new
+        //add new VC
         container.addSubview(destinationController.view)
         destinationController.view.autoresizingMask.insert(NSView.AutoresizingMask.height)
         destinationController.view.autoresizingMask.insert(NSView.AutoresizingMask.width)

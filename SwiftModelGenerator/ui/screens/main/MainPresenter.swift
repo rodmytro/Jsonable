@@ -22,8 +22,15 @@ class MainPresenter: BasePresenter<MainMvpView> {
         NSPasteboard.general.setString(modelCode, forType: .string)
     }
     
+    func onPasted(json: String?) {
+        guard let json = json else { return }
+        
+        highlightPasted(json: json)
+        generateModel(from: json)
+    }
+    
     private func generateModel(from jsonText: String) {
-        let className = "MyClass"
+        let className = "RENAMEME"
         
         guard let modelCode = ModelService(from: jsonText, andName: className).generate() else { return }
         self.modelCode = modelCode
@@ -34,13 +41,9 @@ class MainPresenter: BasePresenter<MainMvpView> {
         view.showModel(text: attrString)
     }
     
-    func onPasted(json: String?) {
-        guard let json = json else { return }
-        
+    private func highlightPasted(json: String) {
         let attrString = JSONSyntaxHighlighter(code: json, className: "").highlighted
         view.showJSON(text: attrString)
-        
-        generateModel(from: json)
     }
     
 }
