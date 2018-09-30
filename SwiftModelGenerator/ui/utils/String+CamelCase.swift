@@ -21,4 +21,8 @@ public extension String {
         
         return value
     }
+    
+    public var upperCamelCase: String {
+        return self.camelCase.capitalized
+    }
 }

@@ -20,6 +20,7 @@ class ViewRouter: BaseRouter {
     
     init(container: NSView) {
         self.container = container
+        self.container.autoresizesSubviews = true
     }
     
     //TODO refactor, make different functions
@@ -45,6 +46,8 @@ class ViewRouter: BaseRouter {
         
         //add new
         container.addSubview(destinationController.view)
+        destinationController.view.autoresizingMask.insert(NSView.AutoresizingMask.height)
+        destinationController.view.autoresizingMask.insert(NSView.AutoresizingMask.width)
         destinationController.view.frame = container.frame
         
         action(destinationController)

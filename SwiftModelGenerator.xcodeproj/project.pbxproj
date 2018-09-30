@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				4930C42121300FA700709D40 /* common */,
-				4930C4262130100600709D40 /* modules */,
+				4930C4262130100600709D40 /* screens */,
 				4930C43C213331C800709D40 /* utils */,
 				4930C41821300CE500709D40 /* window */,
 			);
@@ -274,12 +274,12 @@
 			path = common;
 			sourceTree = "<group>";
 		};
-		4930C4262130100600709D40 /* modules */ = {
+		4930C4262130100600709D40 /* screens */ = {
 			isa = PBXGroup;
 			children = (
 				4930C4272130101A00709D40 /* main */,
 			);
-			path = modules;
+			path = screens;
 			sourceTree = "<group>";
 		};
 		4930C4272130101A00709D40 /* main */ = {
@@ -305,12 +305,8 @@
 		4930C431213013C300709D40 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				4942AA60213BF54900216A50 /* modelGenerator */,
 				49F0AAD321394B9400633D9C /* syntaxHighlighter */,
-				4930C4382131CCA700709D40 /* VariableType.swift */,
-				4930C434213016E400709D40 /* IndentableOutput.swift */,
-				4930C436213022A100709D40 /* SwiftyJSON.swift */,
-				4930C43A2132CF6400709D40 /* ModelGenerator.swift */,
-				49F0AAF421396F2400633D9C /* ModelService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -341,6 +337,18 @@
 				49F0AACB21384A9600633D9C /* NSButton+Style.swift */,
 			);
 			path = style;
+			sourceTree = "<group>";
+		};
+		4942AA60213BF54900216A50 /* modelGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				4930C4382131CCA700709D40 /* VariableType.swift */,
+				4930C434213016E400709D40 /* IndentableOutput.swift */,
+				4930C436213022A100709D40 /* SwiftyJSON.swift */,
+				4930C43A2132CF6400709D40 /* ModelGenerator.swift */,
+				49F0AAF421396F2400633D9C /* ModelService.swift */,
+			);
+			path = modelGenerator;
 			sourceTree = "<group>";
 		};
 		49F0AAD321394B9400633D9C /* syntaxHighlighter */ = {

@@ -25,9 +25,7 @@ class MainVC: BaseVC {
         style()
         
         jsonTextView.pasteCallback = { [weak self] in 
-            guard let strongSelf = self else { return }
-            
-            strongSelf.presenter.onPasted(json: strongSelf.jsonTextView.textStorage!.string)
+            self?.presenter.onPasted(json: self?.jsonTextView.textStorage?.string)
         }
     }
     
@@ -38,11 +36,11 @@ class MainVC: BaseVC {
     }
     
     @IBAction func onConvertClick(_ sender: Any) {
-        presenter.generateModel(from: jsonTextView.textStorage!.string)
+        presenter.onConvertClick(from: jsonTextView.textStorage!.string)
     }
     
     @IBAction func onCopyClick(_ sender: Any) {
-        
+        presenter.onCopyClick()
     }
 }
 

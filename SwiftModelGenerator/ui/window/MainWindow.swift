@@ -30,5 +30,8 @@ class MainWindow: NSWindow {
         self <- [WindowStyle.appearanceDark, WindowStyle.bgrDarkGrey, WindowStyle.titleBarTransparent]
     }
     
+}
+
+extension MainWindow: NSWindowDelegate {
     
 }

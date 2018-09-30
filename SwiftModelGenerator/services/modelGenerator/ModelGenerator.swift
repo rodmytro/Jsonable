@@ -17,7 +17,7 @@ class ModelGenerator {
     private var modelOutput: IndentableOutput = IndentableOutput()
     private var decodableOutput: IndentableOutput = IndentableOutput()
     
-    private var childModels: [ModelGenerator] = []
+    private var childOutput: String = ""
     
     var output: String {
         get {
@@ -27,7 +27,9 @@ class ModelGenerator {
                 "\n" +
                 modelOutput.output +
                 "\n" +
-                decodableOutput.output
+                decodableOutput.output +
+                "\n" +
+                childOutput
         }
     }
     
@@ -35,6 +37,22 @@ class ModelGenerator {
         buildDecodable(json: json, className: className)
         buildModel(json: json, className: className)
         buildCodingKeys(json: json, className: className)
+        
+        buildSubModels(from: json)
+    }
+    
+    private func buildSubModels(from json: JSON) {
+        iterate(by: json) { key, value in
+            let type = VariableType(from: value as JSON)
+            
+            switch type {
+            case .CustomObject(let name, let json):
+                let childGenerator = ModelGenerator(from: json, andName: name.upperCamelCase)
+                self.childOutput += childGenerator.output
+            default:
+                break
+            }
+        }
     }
     
     private func buildDecodable(json: JSON, className: String) {
@@ -65,17 +83,17 @@ class ModelGenerator {
         
         iterate(by: json) { key, value in
             let type = VariableType(from: value as JSON)
-            _ = self.modelOutput += "let \(key.camelCase): \(type)"
+            _ = self.modelOutput += "let \(key.camelCase): \(type.swiftable)"
         }
         
         _ = (modelOutput.dedent() += "}")
     }
     
     private func iterate(by json: JSON, with closure: @escaping ((_ key: String, _ value: JSON) -> Void) ) {
-        if let object = json.dictionary {
-            for (key, value) in object {
-                closure(key, value)
-            }
+        guard let object = json.dictionary else { return }
+        
+        object.forEach {
+            closure($0.key, $0.value)
         }
     }
     
@@ -84,7 +102,7 @@ class ModelGenerator {
     }
     
     private func buildDecodeStatement(io: IndentableOutput, key: String, type: VariableType) {
-        _ = (io += "self.\(key.camelCase) = try container.decode(\(type).self, forKey: .\(key.camelCase))")
+        _ = (io += "self.\(key.camelCase) = try container.decode(\(type.swiftable).self, forKey: .\(key.camelCase))")
     }
     
     private func buildClassName(className: String, suffix: String) -> String {
