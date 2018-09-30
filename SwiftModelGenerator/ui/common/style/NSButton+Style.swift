@@ -10,11 +10,10 @@ import AppKit
 
 struct ButtonStyle {
     
-    static var textColor: Decoration<NSButton> {
+    static func text(color: NSColor) -> Decoration<NSButton> {
         return {
             (view: NSButton) -> Void in
             
-            //TODO
         }
     }
     

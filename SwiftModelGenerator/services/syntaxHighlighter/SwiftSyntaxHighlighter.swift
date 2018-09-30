@@ -22,6 +22,7 @@ class SwiftSyntaxHighlighter: SyntaxHighlighter {
           "Double?": .type,
           "String?": .type,
           "Bool?": .type,
+          "[Any?]": .type,
           "CodingKey": .type,
           "CodingKeys": .type,
           "Decodable": .type,
