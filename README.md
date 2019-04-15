@@ -18,10 +18,10 @@ JSONABLE is a MacOS app that converts JSON to Swift Codable data models. It gene
 
 <!-- icons without padding -->
 
-[1.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
-[2.2]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
+[1.1]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
+[2.1]: http://i.imgur.com/fep1WsG.png (facebook icon without padding)
 [OmiSoft](https://omisoft.net)
 
 ## License
-Fusuma is released under the MIT license.  
+JSONABLE is released under the MIT license.  
 See LICENSE for details.
