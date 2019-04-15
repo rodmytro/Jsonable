@@ -29,7 +29,7 @@ class MainVC: BaseVC {
     private func setupStyle() {
         jsonTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
         modelTextView <- [TextStyle.bgrDarkGrey, TextStyle.textWhite, Style.appearanceAqua]
-        convertButton <- [Style.buttonGradient]
+//        convertButton <- [Style.buttonGradient]
     }
     
     private func setupPasteActions() {
