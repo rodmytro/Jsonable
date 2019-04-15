@@ -42,7 +42,7 @@ extension VariableType {
             self = .Double
         } else if let dict = js.dictionary,
             let name = dict.keys.first,
-            let value = dict.values.first{
+            let value = dict.values.first {
             self = .CustomObject(name, value)
         } else if let _ = js.array {
             self = .AnyArray

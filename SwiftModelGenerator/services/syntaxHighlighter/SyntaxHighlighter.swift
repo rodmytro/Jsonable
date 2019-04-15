@@ -9,9 +9,6 @@
 import Foundation
 
 protocol SyntaxHighlighter {
-    
     init(code: String, className: String)
-    
     var highlighted: NSMutableAttributedString { get }
-    
 }

@@ -13,6 +13,7 @@ class PastableTextView: NSTextView {
     
     var pasteCallback: (() -> Void)?
     
+    //"data to excel\n then change line \t then tab a column"
     override func paste(_ sender: Any?) {
         pasteAsPlainText(sender)
         
