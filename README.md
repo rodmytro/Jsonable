@@ -7,6 +7,8 @@ JSONABLE is a MacOS app that converts JSON to Swift Codable data models. It gene
 <img src="./Demo/jsonable.gif?raw=true">
 
 ## Author
+Dmytro Romaniuk
+iOS & macOS developer
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 <!-- display the social media buttons in your README -->
 
@@ -24,4 +26,4 @@ JSONABLE is a MacOS app that converts JSON to Swift Codable data models. It gene
 
 ## License
 JSONABLE is released under the MIT license.  
-See LICENSE for details.
+See the [LICENSE](./LICENSE.md) for details.
